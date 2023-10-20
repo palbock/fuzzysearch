@@ -14,7 +14,7 @@ public class LocationFuzzySearchService
     
     public IEnumerable<string> GetLocations(string query)
     {
-        var locations = _locationRepository.GetLocations();
+        var locations = GetNorwegianLocations(_locationRepository.GetLocations());
         var results = locations
             .Select(location => new
             {
@@ -22,10 +22,15 @@ public class LocationFuzzySearchService
                 Score = Fuzz.Ratio(query, location.Name)
             })
             .OrderByDescending(result => result.Score)
-            .Take(5)
+            .Take(20)
             .Select(result => result.Location.Name);
 
         return results;
+    }
+
+    private IEnumerable<Location> GetNorwegianLocations(IEnumerable<Location> locations)
+    {
+        return locations.Where(l => l is { CountryCode: "NO", FeatureClass: "A" or "P" });
     }
 }
 
