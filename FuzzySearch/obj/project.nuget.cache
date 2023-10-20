@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "J7xR1+pwoIocEiRAvPwRK6s7RB5oCy4TEPFirCtGFFgGvFADrYNyTncHEMUjhH+U0KilMpXqAhDEZ8CCcH+bxg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PLBO\\RiderProjects\\FuzzySearch\\FuzzySearch\\FuzzySearch.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PLBO\\.nuget\\packages\\fuzzysharp\\2.0.2\\fuzzysharp.2.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
