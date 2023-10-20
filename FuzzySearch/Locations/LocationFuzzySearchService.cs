@@ -19,7 +19,7 @@ public class LocationFuzzySearchService
             .Select(location => new
             {
                 Location = location,
-                Score = Fuzz.Ratio(query, location.Name)
+                Score = Fuzz.Ratio(query.ToLower(), location.Name.ToLower())
             })
             .OrderByDescending(result => result.Score)
             .Take(20)
